@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features — Wireframe</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #fff; color: #111; width: 1440px; }
+  .wf-box { background: #e8e8e8; border: 1.5px dashed #bbb; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 13px; }
+  .wf-btn-primary { background: #111; color: #fff; border: none; border-radius: 5px; padding: 10px 22px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .wf-btn-secondary { background: transparent; color: #111; border: 1.5px solid #111; border-radius: 5px; padding: 10px 22px; font-size: 13px; cursor: pointer; }
+  .section-label { font-size: 11px; background: #f0f0f0; color: #888; border: 1px solid #ddd; padding: 2px 10px; border-radius: 4px; display: inline-block; margin-bottom: 12px; }
+  .section { padding: 48px 80px; border-bottom: 1px solid #eee; }
+  nav { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e0e0e0; padding: 16px 80px; display: flex; align-items: center; justify-content: space-between; z-index: 100; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-logo .logo-box { width: 36px; height: 36px; background: #e8e8e8; border: 1.5px dashed #bbb; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 14px; color: #444; text-decoration: none; }
+  .nav-links a.active { color: #111; font-weight: 700; border-bottom: 2px solid #111; padding-bottom: 2px; }
+  .nav-actions { display: flex; gap: 10px; }
+  .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; padding: 56px 0; border-bottom: 1px solid #f0f0f0; }
+  .feature-row:last-child { border-bottom: none; }
+  .feature-icon { width: 52px; height: 52px; background: #e8e8e8; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px; }
+  .bullet-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 13px; color: #444; }
+  footer { padding: 48px 80px 24px; border-top: 1px solid #e0e0e0; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+  .footer-link { font-size: 13px; color: #666; display: block; margin-bottom: 8px; text-decoration: none; }
+  .footer-heading { font-size: 13px; font-weight: 700; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-box">◈</div>
+    <span style="font-size:15px; font-weight:700;">[Product Name]</span>
+  </div>
+  <div class="nav-links">
+    <a href="#" class="active">Features</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="nav-actions">
+    <button class="wf-btn-secondary">Log in</button>
+    <button class="wf-btn-primary">Request Demo</button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="section" style="text-align:center; background:#fafafa; padding:56px 80px 40px;">
+  <span class="section-label">Section 1 — Page Hero</span>
+  <div class="wf-box" style="height:42px; max-width:600px; margin:12px auto 12px; font-size:20px;">[ "Everything you need to grow your restaurant" ]</div>
+  <div class="wf-box" style="height:22px; max-width:500px; margin:0 auto;">[ One-line subheadline — simple, no jargon ]</div>
+</div>
+
+<!-- FEATURE ANCHOR TABS -->
+<div class="section" style="padding:20px 80px; background:#fff;">
+  <span class="section-label">Section 2 — Feature anchor tabs</span>
+  <div style="display:flex; gap:10px; margin-top:12px;">
+    <div style="padding:7px 20px; background:#111; color:#fff; border-radius:20px; font-size:13px; cursor:pointer;">AI Insights</div>
+    <div style="padding:7px 20px; border:1px solid #ddd; border-radius:20px; font-size:13px; color:#666; cursor:pointer;">Customer Retention</div>
+    <div style="padding:7px 20px; border:1px solid #ddd; border-radius:20px; font-size:13px; color:#666; cursor:pointer;">Campaign Builder</div>
+    <div style="padding:7px 20px; border:1px solid #ddd; border-radius:20px; font-size:13px; color:#666; cursor:pointer;">Analytics</div>
+  </div>
+</div>
+
+<!-- FEATURE DETAILS -->
+<div class="section">
+  <span class="section-label">Section 3 — Feature details</span>
+
+  <!-- FEATURE 1 — AI INSIGHTS -->
+  <div class="feature-row" id="ai-insights">
+    <div>
+      <div class="feature-icon">🧠</div>
+      <div class="wf-box" style="height:28px; margin-bottom:12px; font-size:15px;">[ AI-Powered Insights ]</div>
+      <div class="wf-box" style="height:60px; margin-bottom:18px; font-size:13px;">[ 2–3 line plain description of what this feature does for a restaurant owner ]</div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 1 ]</div></div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 2 ]</div></div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 3 ]</div></div>
+      <div style="margin-top:16px;">
+        <a href="how-it-works.html" style="font-size:13px; color:#111; text-decoration:underline;">See how it works →</a>
+      </div>
+    </div>
+    <div class="wf-box" style="height:280px; border-radius:12px;">[ Screenshot — AI insights screen ]</div>
+  </div>
+
+  <!-- FEATURE 2 — CUSTOMER RETENTION -->
+  <div class="feature-row" id="retention">
+    <div class="wf-box" style="height:280px; border-radius:12px;">[ Screenshot — retention dashboard ]</div>
+    <div>
+      <div class="feature-icon">🤝</div>
+      <div class="wf-box" style="height:28px; margin-bottom:12px; font-size:15px;">[ Customer Retention ]</div>
+      <div class="wf-box" style="height:60px; margin-bottom:18px; font-size:13px;">[ 2–3 line plain description — e.g. "Know exactly which customers haven't visited in a while and win them back." ]</div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 1 ]</div></div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 2 ]</div></div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 3 ]</div></div>
+      <div style="margin-top:16px;">
+        <a href="how-it-works.html" style="font-size:13px; color:#111; text-decoration:underline;">See how it works →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURE 3 — CAMPAIGN BUILDER -->
+  <div class="feature-row" id="campaigns">
+    <div>
+      <div class="feature-icon">📧</div>
+      <div class="wf-box" style="height:28px; margin-bottom:12px; font-size:15px;">[ Campaign Builder ]</div>
+      <div class="wf-box" style="height:60px; margin-bottom:18px; font-size:13px;">[ 2–3 line plain description — e.g. "Send email and SMS campaigns to your customers in one click. No marketing experience needed." ]</div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 1 ]</div></div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 2 ]</div></div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 3 ]</div></div>
+      <div style="margin-top:16px;">
+        <a href="how-it-works.html" style="font-size:13px; color:#111; text-decoration:underline;">See how it works →</a>
+      </div>
+    </div>
+    <div class="wf-box" style="height:280px; border-radius:12px;">[ Screenshot — campaign builder screen ]</div>
+  </div>
+
+  <!-- FEATURE 4 — ANALYTICS -->
+  <div class="feature-row" id="analytics">
+    <div class="wf-box" style="height:280px; border-radius:12px;">[ Screenshot — analytics dashboard ]</div>
+    <div>
+      <div class="feature-icon">📊</div>
+      <div class="wf-box" style="height:28px; margin-bottom:12px; font-size:15px;">[ Analytics & Reporting ]</div>
+      <div class="wf-box" style="height:60px; margin-bottom:18px; font-size:13px;">[ 2–3 line plain description — e.g. "See what's working in a simple dashboard. No spreadsheets, no confusion." ]</div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 1 ]</div></div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 2 ]</div></div>
+      <div class="bullet-item">✓ <div class="wf-box" style="height:20px; flex:1; font-size:12px;">[ Benefit point 3 ]</div></div>
+      <div style="margin-top:16px;">
+        <a href="how-it-works.html" style="font-size:13px; color:#111; text-decoration:underline;">See how it works →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARE PLANS NUDGE -->
+<div class="section" style="text-align:center; background:#f5f5f5;">
+  <span class="section-label">Section 4 — Compare plans nudge</span>
+  <div class="wf-box" style="height:28px; max-width:440px; margin:12px auto 20px; font-size:15px;">[ "Not sure which features you need?" ]</div>
+  <div style="display:flex; justify-content:center; gap:12px;">
+    <a href="pricing.html"><button class="wf-btn-secondary" style="padding:12px 28px;">Compare plans</button></a>
+    <a href="demo.html"><button class="wf-btn-primary" style="padding:12px 28px;">Request a Demo</button></a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+        <div style="width:32px; height:32px; background:#e8e8e8; border-radius:8px; display:flex; align-items:center; justify-content:center;">◈</div>
+        <span style="font-size:14px; font-weight:700;">[Product Name]</span>
+      </div>
+      <div class="wf-box" style="height:40px; font-size:12px;">[ Tagline ]</div>
+    </div>
+    <div>
+      <p class="footer-heading">Product</p>
+      <a class="footer-link" href="features.html">Features</a>
+      <a class="footer-link" href="pricing.html">Pricing</a>
+      <a class="footer-link" href="how-it-works.html">How It Works</a>
+    </div>
+    <div>
+      <p class="footer-heading">Company</p>
+      <a class="footer-link" href="about.html">About</a>
+      <a class="footer-link" href="blog.html">Blog</a>
+      <a class="footer-link" href="demo.html">Contact</a>
+    </div>
+    <div>
+      <p class="footer-heading">Legal</p>
+      <a class="footer-link" href="#">Privacy Policy</a>
+      <a class="footer-link" href="#">Terms of Service</a>
+    </div>
+  </div>
+  <div style="border-top:1px solid #eee; padding-top:20px;">
+    <p style="font-size:12px; color:#aaa;">© 2026 [Product Name]. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
