@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Trial — Wireframe</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #fff; color: #111; width: 1440px; }
+  .wf-box { background: #e8e8e8; border: 1.5px dashed #bbb; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 13px; }
+  .wf-btn-primary { background: #111; color: #fff; border: none; border-radius: 5px; padding: 10px 22px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .wf-btn-secondary { background: transparent; color: #111; border: 1.5px solid #111; border-radius: 5px; padding: 10px 22px; font-size: 13px; cursor: pointer; }
+  .section-label { font-size: 11px; background: #f0f0f0; color: #888; border: 1px solid #ddd; padding: 2px 10px; border-radius: 4px; display: inline-block; margin-bottom: 12px; }
+  .section { padding: 48px 80px; border-bottom: 1px solid #eee; }
+  nav { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e0e0e0; padding: 16px 80px; display: flex; align-items: center; justify-content: space-between; z-index: 100; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-logo .logo-box { width: 36px; height: 36px; background: #e8e8e8; border: 1.5px dashed #bbb; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 14px; color: #444; text-decoration: none; }
+  .nav-actions { display: flex; gap: 10px; }
+  .field-group { margin-bottom: 14px; }
+  .field-label { font-size: 13px; font-weight: 600; margin-bottom: 6px; display: block; }
+  .field-input { background: #f5f5f5; border: 1px solid #ddd; border-radius: 6px; height: 38px; width: 100%; display: flex; align-items: center; padding: 0 12px; font-size: 13px; color: #aaa; }
+  .field-select { background: #f5f5f5; border: 1px solid #ddd; border-radius: 6px; height: 38px; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; font-size: 13px; color: #aaa; }
+  .field-textarea { background: #f5f5f5; border: 1px solid #ddd; border-radius: 6px; height: 80px; width: 100%; display: flex; align-items: flex-start; padding: 10px 12px; font-size: 13px; color: #aaa; }
+  .benefit-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+  footer { padding: 48px 80px 24px; border-top: 1px solid #e0e0e0; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+  .footer-link { font-size: 13px; color: #666; display: block; margin-bottom: 8px; text-decoration: none; }
+  .footer-heading { font-size: 13px; font-weight: 700; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-box">◈</div>
+    <span style="font-size:15px; font-weight:700;">[Product Name]</span>
+  </div>
+  <div class="nav-links">
+    <a href="homepage.html">Solutions</a>
+    <a href="homepage.html">How It Works</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="nav-actions">
+    <button class="wf-btn-secondary">Log in</button>
+    <button class="wf-btn-primary" style="background:#555;">Free Trial</button>
+  </div>
+</nav>
+
+<!-- MAIN TWO-COLUMN -->
+<div class="section">
+  <span class="section-label">Section — Main Content (Two-column)</span>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; margin-top:12px; align-items:start;">
+
+    <!-- LEFT: BENEFITS + CONTACT -->
+    <div>
+      <div class="wf-box" style="height:18px; width:160px; margin-bottom:12px;">[ "Watch a Demo" label ]</div>
+      <div class="wf-box" style="height:40px; margin-bottom:12px; font-size:18px;">[ Headline — "See it in action" ]</div>
+      <div class="wf-box" style="height:48px; margin-bottom:28px; font-size:13px;">[ 2-line supporting paragraph ]</div>
+
+      <p style="font-size:14px; font-weight:700; margin-bottom:14px;">What you'll get:</p>
+
+      <div class="benefit-item">
+        <div style="width:24px; height:24px; background:#111; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; flex-shrink:0;">✓</div>
+        <div>
+          <div class="wf-box" style="height:18px; width:220px; margin-bottom:6px;">[ Benefit 1 title ]</div>
+          <div class="wf-box" style="height:14px; width:260px; font-size:11px;">[ Short description ]</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div style="width:24px; height:24px; background:#111; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; flex-shrink:0;">✓</div>
+        <div>
+          <div class="wf-box" style="height:18px; width:220px; margin-bottom:6px;">[ Benefit 2 title ]</div>
+          <div class="wf-box" style="height:14px; width:260px; font-size:11px;">[ Short description ]</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div style="width:24px; height:24px; background:#111; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; flex-shrink:0;">✓</div>
+        <div>
+          <div class="wf-box" style="height:18px; width:220px; margin-bottom:6px;">[ Benefit 3 title ]</div>
+          <div class="wf-box" style="height:14px; width:260px; font-size:11px;">[ Short description ]</div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid #eee; padding-top:20px; margin-top:8px;">
+        <p style="font-size:13px; font-weight:700; margin-bottom:12px;">Or reach us directly:</p>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <span style="font-size:16px;">✉</span>
+          <span style="font-size:13px; color:#555;">[ hello@productname.com ]</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:16px;">in</span>
+          <span style="font-size:13px; color:#555;">[ LinkedIn URL ]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div style="border:1px solid #e0e0e0; border-radius:12px; padding:28px;">
+      <p style="font-size:16px; font-weight:700; margin-bottom:20px;">Book your demo</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="field-group">
+          <span class="field-label">First name *</span>
+          <div class="field-input">[ Text input ]</div>
+        </div>
+        <div class="field-group">
+          <span class="field-label">Last name *</span>
+          <div class="field-input">[ Text input ]</div>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <span class="field-label">Work email *</span>
+        <div class="field-input">[ Email input ]</div>
+      </div>
+
+      <div class="field-group">
+        <span class="field-label">Restaurant name *</span>
+        <div class="field-input">[ Text input ]</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="field-group">
+          <span class="field-label">Number of locations</span>
+          <div class="field-select"><span>[ Select ]</span><span>∨</span></div>
+        </div>
+        <div class="field-group">
+          <span class="field-label">Current POS system</span>
+          <div class="field-select"><span>[ Select ]</span><span>∨</span></div>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <span class="field-label">What are you hoping to improve?</span>
+        <div class="field-textarea">[ Textarea ]</div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:10px; margin:14px 0;">
+        <div style="width:16px; height:16px; border:1.5px solid #bbb; border-radius:3px; flex-shrink:0; margin-top:2px;"></div>
+        <span style="font-size:12px; color:#777;">I agree to the privacy policy and consent to being contacted.</span>
+      </div>
+
+      <button class="wf-btn-primary" style="width:100%; padding:12px; font-size:14px;">Start Free Trial →</button>
+      <p style="font-size:12px; color:#aaa; text-align:center; margin-top:10px;">We usually respond within 1 business day.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS STATE -->
+<div class="section" style="background:#fafafa;">
+  <span class="section-label">Section — Form Success State (shown after submission)</span>
+  <div style="text-align:center; padding:32px; border:1.5px dashed #bbb; border-radius:10px; max-width:520px; margin:0 auto;">
+    <div style="width:56px; height:56px; background:#e8e8e8; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:22px;">✓</div>
+    <div class="wf-box" style="height:26px; max-width:340px; margin:0 auto 10px;">[ "You're booked! We'll be in touch." ]</div>
+    <div class="wf-box" style="height:18px; max-width:380px; margin:0 auto 20px; font-size:12px;">[ Confirmation + what happens next ]</div>
+    <button class="wf-btn-secondary">Back to homepage</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+        <div style="width:32px; height:32px; background:#e8e8e8; border-radius:8px; display:flex; align-items:center; justify-content:center;">◈</div>
+        <span style="font-size:14px; font-weight:700;">[Product Name]</span>
+      </div>
+      <div class="wf-box" style="height:40px; font-size:12px;">[ Tagline ]</div>
+    </div>
+    <div>
+      <p class="footer-heading">Product</p>
+      <a class="footer-link" href="#">Solutions</a>
+      <a class="footer-link" href="#">Pricing</a>
+      <a class="footer-link" href="#">How It Works</a>
+    </div>
+    <div>
+      <p class="footer-heading">Company</p>
+      <a class="footer-link" href="#">About</a>
+      <a class="footer-link" href="#">Blog</a>
+      <a class="footer-link" href="#">Contact</a>
+    </div>
+    <div>
+      <p class="footer-heading">Legal</p>
+      <a class="footer-link" href="#">Privacy Policy</a>
+      <a class="footer-link" href="#">Terms of Service</a>
+    </div>
+  </div>
+  <div style="border-top:1px solid #eee; padding-top:20px;">
+    <p style="font-size:12px; color:#aaa;">© 2026 [Product Name]. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

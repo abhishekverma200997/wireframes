@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Wireframe</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #fff; color: #111; width: 1440px; }
+  .wf-box { background: #e8e8e8; border: 1.5px dashed #bbb; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 13px; }
+  .wf-btn-primary { background: #111; color: #fff; border: none; border-radius: 5px; padding: 10px 22px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .wf-btn-secondary { background: transparent; color: #111; border: 1.5px solid #111; border-radius: 5px; padding: 10px 22px; font-size: 13px; cursor: pointer; }
+  .section-label { font-size: 11px; background: #f0f0f0; color: #888; border: 1px solid #ddd; padding: 2px 10px; border-radius: 4px; display: inline-block; margin-bottom: 12px; }
+  .section { padding: 48px 80px; border-bottom: 1px solid #eee; }
+  nav { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e0e0e0; padding: 16px 80px; display: flex; align-items: center; justify-content: space-between; z-index: 100; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-logo .logo-box { width: 36px; height: 36px; background: #e8e8e8; border: 1.5px dashed #bbb; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 14px; color: #444; text-decoration: none; }
+  .nav-links a.active { color: #111; font-weight: 700; border-bottom: 2px solid #111; padding-bottom: 2px; }
+  .nav-actions { display: flex; gap: 10px; }
+  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 32px; }
+  .pricing-card { border: 1px solid #e0e0e0; border-radius: 10px; padding: 24px; }
+  .pricing-card.featured { border: 2.5px solid #111; position: relative; }
+  .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #111; color: #fff; font-size: 11px; padding: 3px 14px; border-radius: 20px; white-space: nowrap; }
+  .check-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 13px; color: #555; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { padding: 12px 16px; text-align: left; font-weight: 700; border-bottom: 1px solid #e0e0e0; background: #f5f5f5; }
+  td { padding: 10px 16px; border-bottom: 1px solid #f0f0f0; }
+  .cat-row td { background: #f9f9f9; font-weight: 700; font-size: 12px; color: #666; padding: 8px 16px; }
+  .faq-item { border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  footer { padding: 48px 80px 24px; border-top: 1px solid #e0e0e0; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+  .footer-link { font-size: 13px; color: #666; display: block; margin-bottom: 8px; text-decoration: none; }
+  .footer-heading { font-size: 13px; font-weight: 700; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-box">◈</div>
+    <span style="font-size:15px; font-weight:700;">[Product Name]</span>
+  </div>
+  <div class="nav-links">
+    <a href="homepage.html">Solutions</a>
+    <a href="homepage.html">How It Works</a>
+    <a href="#" class="active">Pricing</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="nav-actions">
+    <button class="wf-btn-secondary">Log in</button>
+    <button class="wf-btn-primary">Free Trial</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="section" style="text-align:center; background:#fafafa;">
+  <span class="section-label">Section — Page Hero</span>
+  <div class="wf-box" style="height:40px; max-width:480px; margin:0 auto 12px; font-size:18px;">[ Pricing headline ]</div>
+  <div class="wf-box" style="height:22px; max-width:420px; margin:0 auto 24px;">[ Supporting subheadline ]</div>
+  <div style="display:inline-flex; border:1.5px solid #ddd; border-radius:8px; overflow:hidden;">
+    <div style="padding:8px 24px; background:#111; color:#fff; font-size:13px; font-weight:600;">Monthly</div>
+    <div style="padding:8px 24px; font-size:13px; color:#666;">Annually <span style="font-size:11px;">— save 20%</span></div>
+  </div>
+</div>
+
+<!-- PRICING CARDS -->
+<div class="section">
+  <span class="section-label">Section — Pricing Cards</span>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <p style="font-size:15px; font-weight:700; margin-bottom:6px;">Starter</p>
+      <div class="wf-box" style="height:36px; margin-bottom:8px; font-size:18px;">[ $XX / month ]</div>
+      <p style="font-size:12px; color:#888; margin-bottom:16px;">[ Ideal for 1 location ]</p>
+      <button class="wf-btn-secondary" style="width:100%; margin-bottom:18px;">Get started</button>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ Feature 1 ]</div></div>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ Feature 2 ]</div></div>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ Feature 3 ]</div></div>
+      <div class="check-row" style="color:#bbb;">— <div class="wf-box" style="height:18px; flex:1; opacity:0.5;">[ Not included ]</div></div>
+      <div class="check-row" style="color:#bbb;">— <div class="wf-box" style="height:18px; flex:1; opacity:0.5;">[ Not included ]</div></div>
+    </div>
+    <div class="pricing-card featured">
+      <div class="popular-badge">Most popular</div>
+      <p style="font-size:15px; font-weight:700; margin-bottom:6px;">Growth</p>
+      <div class="wf-box" style="height:36px; margin-bottom:8px; font-size:18px;">[ $XX / month ]</div>
+      <p style="font-size:12px; color:#888; margin-bottom:16px;">[ Ideal for 2–5 locations ]</p>
+      <button class="wf-btn-primary" style="width:100%; margin-bottom:18px;">Get started</button>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ Everything in Starter ]</div></div>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ Feature 4 ]</div></div>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ Feature 5 ]</div></div>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ Feature 6 ]</div></div>
+      <div class="check-row" style="color:#bbb;">— <div class="wf-box" style="height:18px; flex:1; opacity:0.5;">[ Not included ]</div></div>
+    </div>
+    <div class="pricing-card">
+      <p style="font-size:15px; font-weight:700; margin-bottom:6px;">Pro</p>
+      <div class="wf-box" style="height:36px; margin-bottom:8px; font-size:18px;">[ $XX / month ]</div>
+      <p style="font-size:12px; color:#888; margin-bottom:16px;">[ Ideal for chains & groups ]</p>
+      <button class="wf-btn-secondary" style="width:100%; margin-bottom:18px;">Get started</button>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ Everything in Growth ]</div></div>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ Feature 7 ]</div></div>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ Dedicated support ]</div></div>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ Custom integrations ]</div></div>
+      <div class="check-row">✓ <div class="wf-box" style="height:18px; flex:1;">[ SLA + onboarding ]</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<div class="section" style="background:#fafafa;">
+  <span class="section-label">Section — Feature Comparison Table</span>
+  <div style="text-align:center; margin-bottom:24px;">
+    <div class="wf-box" style="height:28px; max-width:320px; margin:0 auto;">[ "Compare all features" ]</div>
+  </div>
+  <div style="border:1px solid #e0e0e0; border-radius:10px; overflow:hidden;">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:40%;">Feature</th>
+          <th style="text-align:center;">Starter</th>
+          <th style="text-align:center;">Growth ★</th>
+          <th style="text-align:center;">Pro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cat-row"><td colspan="4">AI & Insights</td></tr>
+        <tr><td>AI marketing recommendations</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td>Predictive customer analytics</td><td style="text-align:center; color:#ccc;">—</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td>Customer segmentation</td><td style="text-align:center; color:#ccc;">—</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr class="cat-row"><td colspan="4">Campaigns</td></tr>
+        <tr><td>Email campaigns</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td>SMS campaigns</td><td style="text-align:center; color:#ccc;">—</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td>Custom campaign templates</td><td style="text-align:center; color:#ccc;">—</td><td style="text-align:center; color:#ccc;">—</td><td style="text-align:center;">✓</td></tr>
+        <tr class="cat-row"><td colspan="4">Analytics</td></tr>
+        <tr><td>Basic reporting dashboard</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td>Advanced analytics</td><td style="text-align:center; color:#ccc;">—</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr class="cat-row"><td colspan="4">Support</td></tr>
+        <tr><td>Email support</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td>Priority support</td><td style="text-align:center; color:#ccc;">—</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td>Dedicated account manager</td><td style="text-align:center; color:#ccc;">—</td><td style="text-align:center; color:#ccc;">—</td><td style="text-align:center;">✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+  <span class="section-label">Section — FAQ</span>
+  <div style="text-align:center; margin-bottom:24px;">
+    <div class="wf-box" style="height:28px; max-width:300px; margin:0 auto;">[ "Frequently asked questions" ]</div>
+  </div>
+  <div style="max-width:780px; margin:0 auto;">
+    <div class="faq-item"><span style="font-size:14px;">[ FAQ — Can I switch plans anytime? ]</span><span style="font-size:18px; color:#888;">∨</span></div>
+    <div class="faq-item"><span style="font-size:14px;">[ FAQ — Is there a free trial? ]</span><span style="font-size:18px; color:#888;">∨</span></div>
+    <div class="faq-item"><span style="font-size:14px;">[ FAQ — What POS systems do you integrate with? ]</span><span style="font-size:18px; color:#888;">∨</span></div>
+    <div class="faq-item"><span style="font-size:14px;">[ FAQ — Do you offer custom enterprise pricing? ]</span><span style="font-size:18px; color:#888;">∨</span></div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="section" style="text-align:center; background:#f5f5f5;">
+  <span class="section-label">Section — Bottom CTA</span>
+  <div class="wf-box" style="height:34px; max-width:420px; margin:12px auto 20px; font-size:16px;">[ Still not sure? Talk to us. ]</div>
+  <div style="display:flex; justify-content:center; gap:12px;">
+    <button class="wf-btn-primary" style="padding:12px 28px;">Watch a Demo</button>
+    <button class="wf-btn-secondary" style="padding:12px 28px;">Contact Sales</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+        <div style="width:32px; height:32px; background:#e8e8e8; border-radius:8px; display:flex; align-items:center; justify-content:center;">◈</div>
+        <span style="font-size:14px; font-weight:700;">[Product Name]</span>
+      </div>
+      <div class="wf-box" style="height:40px; font-size:12px;">[ Tagline ]</div>
+    </div>
+    <div>
+      <p class="footer-heading">Product</p>
+      <a class="footer-link" href="#">Solutions</a>
+      <a class="footer-link" href="#">Pricing</a>
+      <a class="footer-link" href="#">How It Works</a>
+    </div>
+    <div>
+      <p class="footer-heading">Company</p>
+      <a class="footer-link" href="#">About</a>
+      <a class="footer-link" href="#">Blog</a>
+      <a class="footer-link" href="#">Contact</a>
+    </div>
+    <div>
+      <p class="footer-heading">Legal</p>
+      <a class="footer-link" href="#">Privacy Policy</a>
+      <a class="footer-link" href="#">Terms of Service</a>
+    </div>
+  </div>
+  <div style="border-top:1px solid #eee; padding-top:20px;">
+    <p style="font-size:12px; color:#aaa;">© 2026 [Product Name]. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
