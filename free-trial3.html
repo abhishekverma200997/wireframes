@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Trial — Wireframe</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #fff; color: #111; width: 1440px; }
+  .wf-box { background: #e8e8e8; border: 1.5px dashed #bbb; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 13px; }
+  .wf-btn-primary { background: #111; color: #fff; border: none; border-radius: 5px; padding: 10px 22px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .wf-btn-secondary { background: transparent; color: #111; border: 1.5px solid #111; border-radius: 5px; padding: 10px 22px; font-size: 13px; cursor: pointer; }
+  .section-label { font-size: 11px; background: #f0f0f0; color: #888; border: 1px solid #ddd; padding: 2px 10px; border-radius: 4px; display: inline-block; margin-bottom: 12px; }
+  .section { padding: 48px 80px; border-bottom: 1px solid #eee; }
+  nav { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e0e0e0; padding: 16px 80px; display: flex; align-items: center; justify-content: space-between; z-index: 100; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-logo .logo-box { width: 36px; height: 36px; background: #e8e8e8; border: 1.5px dashed #bbb; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 14px; color: #444; text-decoration: none; }
+  .nav-actions { display: flex; gap: 10px; }
+  .field-label { font-size: 13px; font-weight: 600; margin-bottom: 6px; display: block; }
+  .field-input { background: #f5f5f5; border: 1px solid #ddd; border-radius: 6px; height: 38px; width: 100%; display: flex; align-items: center; padding: 0 12px; font-size: 13px; color: #aaa; margin-bottom: 14px; }
+  .field-select { background: #f5f5f5; border: 1px solid #ddd; border-radius: 6px; height: 38px; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; font-size: 13px; color: #aaa; margin-bottom: 14px; }
+  .step-circle { width: 36px; height: 36px; border-radius: 50%; background: #111; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+  .video-card { border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; }
+  footer { padding: 48px 80px 24px; border-top: 1px solid #e0e0e0; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+  .footer-link { font-size: 13px; color: #666; display: block; margin-bottom: 8px; text-decoration: none; }
+  .footer-heading { font-size: 13px; font-weight: 700; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR — no Free Trial button, user is already on this page -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-box">◈</div>
+    <span style="font-size:15px; font-weight:700;">[Product Name]</span>
+  </div>
+    <div class="nav-links">
+    <a href="features.html">Solutions</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="education.html">Education</a>
+    <a href="about.html">About</a>
+  </div>
+  <div style="display:flex; gap:10px;">
+    <button class="wf-btn-secondary">Watch a Demo</button>
+    <button class="wf-btn-primary">Free Trial</button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="section" style="text-align:center; background:#fafafa; padding:48px 80px 36px;">
+  <span class="section-label">Section 1 — Page Hero</span>
+  <div class="wf-box" style="height:38px; max-width:520px; margin:12px auto 10px; font-size:18px;">[ "Start your free trial today" ]</div>
+  <div class="wf-box" style="height:20px; max-width:480px; margin:0 auto;">[ No credit card needed. Set up in 10 minutes. ]</div>
+</div>
+
+<!-- MAIN: TWO COLUMN — FORM + GETTING STARTED -->
+<div class="section">
+  <span class="section-label">Section 2 — Signup form + Getting started instructions</span>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; margin-top:12px; align-items:start;">
+
+    <!-- LEFT: SIGNUP FORM -->
+    <div style="border:1px solid #e0e0e0; border-radius:12px; padding:28px;">
+      <p style="font-size:16px; font-weight:700; margin-bottom:6px;">Create your free account</p>
+      <p style="font-size:13px; color:#888; margin-bottom:20px;">[ Free for 14 days. No credit card required. ]</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div>
+          <span class="field-label">First name *</span>
+          <div class="field-input">[ Text input ]</div>
+        </div>
+        <div>
+          <span class="field-label">Last name *</span>
+          <div class="field-input">[ Text input ]</div>
+        </div>
+      </div>
+
+      <span class="field-label">Work email *</span>
+      <div class="field-input">[ Email input ]</div>
+
+      <span class="field-label">Password *</span>
+      <div class="field-input">[ Password input ]</div>
+
+      <span class="field-label">Restaurant name *</span>
+      <div class="field-input">[ Text input ]</div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div>
+          <span class="field-label">Number of locations</span>
+          <div class="field-select"><span>[ Select ]</span><span>∨</span></div>
+        </div>
+        <div>
+          <span class="field-label">Current POS system</span>
+          <div class="field-select"><span>[ Select ]</span><span>∨</span></div>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:10px; margin:4px 0 16px;">
+        <div style="width:16px; height:16px; border:1.5px solid #bbb; border-radius:3px; flex-shrink:0; margin-top:2px;"></div>
+        <span style="font-size:12px; color:#777;">I agree to the Terms of Service and Privacy Policy.</span>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:18px;">
+        <div style="width:16px; height:16px; border:1.5px solid #bbb; border-radius:3px; flex-shrink:0; margin-top:2px;"></div>
+        <span style="font-size:12px; color:#777;">Subscribe to product tips and updates newsletter. (Optional)</span>
+      </div>
+
+      <button class="wf-btn-primary" style="width:100%; padding:12px; font-size:14px;">Start my free trial →</button>
+      <p style="font-size:12px; color:#aaa; text-align:center; margin-top:10px;">Already have an account? <a href="#" style="color:#111;">Log in</a></p>
+    </div>
+
+    <!-- RIGHT: GETTING STARTED INSTRUCTIONS -->
+    <div>
+      <p style="font-size:15px; font-weight:700; margin-bottom:20px;">What happens after you sign up:</p>
+
+      <div style="display:flex; flex-direction:column; gap:18px; margin-bottom:32px;">
+        <div style="display:flex; align-items:flex-start; gap:14px;">
+          <div class="step-circle">1</div>
+          <div>
+            <div class="wf-box" style="height:20px; width:220px; margin-bottom:6px;">[ "Connect your POS" ]</div>
+            <div class="wf-box" style="height:14px; width:280px; font-size:11px;">[ Short instruction — takes 2 minutes ]</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:14px;">
+          <div class="step-circle">2</div>
+          <div>
+            <div class="wf-box" style="height:20px; width:220px; margin-bottom:6px;">[ "We analyse your data" ]</div>
+            <div class="wf-box" style="height:14px; width:280px; font-size:11px;">[ Short instruction — happens automatically ]</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:14px;">
+          <div class="step-circle">3</div>
+          <div>
+            <div class="wf-box" style="height:20px; width:220px; margin-bottom:6px;">[ "Get your first recommendations" ]</div>
+            <div class="wf-box" style="height:14px; width:280px; font-size:11px;">[ Short instruction — within 24 hours ]</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:14px;">
+          <div class="step-circle">4</div>
+          <div>
+            <div class="wf-box" style="height:20px; width:220px; margin-bottom:6px;">[ "Send your first campaign" ]</div>
+            <div class="wf-box" style="height:14px; width:280px; font-size:11px;">[ Short instruction — one click to launch ]</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid #eee; padding-top:20px;">
+        <p style="font-size:13px; font-weight:700; margin-bottom:8px;">Need help getting started?</p>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+          <span>✉</span>
+          <span style="font-size:13px; color:#555;">[ hello@productname.com ]</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span>💬</span>
+          <span style="font-size:13px; color:#555;">[ Live chat — bottom right of screen ]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GETTING STARTED VIDEOS -->
+<div class="section" style="background:#fafafa;">
+  <span class="section-label">Section 3 — Getting started videos</span>
+  <div style="text-align:center; margin-bottom:24px;">
+    <div class="wf-box" style="height:28px; max-width:400px; margin:0 auto 8px;">[ "Watch these short videos to get started" ]</div>
+    <div class="wf-box" style="height:18px; max-width:360px; margin:0 auto; font-size:12px;">[ 2–3 minutes each. No tech experience needed. ]</div>
+  </div>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px;">
+
+    <div class="video-card">
+      <div style="position:relative;">
+        <div class="wf-box" style="height:160px; border-radius:0; border:none;">[ Video thumbnail — Connecting your POS ]</div>
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; background:rgba(0,0,0,0.6); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:18px;">▶</div>
+      </div>
+      <div style="padding:14px;">
+        <div class="wf-box" style="height:18px; margin-bottom:6px;">[ "How to connect your POS" ]</div>
+        <span style="font-size:12px; color:#aaa;">2 min · Getting started</span>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div style="position:relative;">
+        <div class="wf-box" style="height:160px; border-radius:0; border:none;">[ Video thumbnail — Reading your insights ]</div>
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; background:rgba(0,0,0,0.6); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:18px;">▶</div>
+      </div>
+      <div style="padding:14px;">
+        <div class="wf-box" style="height:18px; margin-bottom:6px;">[ "Understanding your dashboard" ]</div>
+        <span style="font-size:12px; color:#aaa;">3 min · Getting started</span>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div style="position:relative;">
+        <div class="wf-box" style="height:160px; border-radius:0; border:none;">[ Video thumbnail — Sending first campaign ]</div>
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; background:rgba(0,0,0,0.6); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:18px;">▶</div>
+      </div>
+      <div style="padding:14px;">
+        <div class="wf-box" style="height:18px; margin-bottom:6px;">[ "Sending your first campaign" ]</div>
+        <span style="font-size:12px; color:#aaa;">2 min · Getting started</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SUCCESS STATE -->
+<div class="section">
+  <span class="section-label">Section 4 — Success state (shown after form submission)</span>
+  <div style="text-align:center; padding:32px; border:1.5px dashed #bbb; border-radius:10px; max-width:520px; margin:0 auto;">
+    <div style="width:56px; height:56px; background:#e8e8e8; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:22px;">✓</div>
+    <div class="wf-box" style="height:26px; max-width:360px; margin:0 auto 10px;">[ "You're in! Check your email to get started." ]</div>
+    <div class="wf-box" style="height:18px; max-width:400px; margin:0 auto 20px; font-size:12px;">[ We've sent you a confirmation email with next steps. ]</div>
+    <button class="wf-btn-primary">Go to my dashboard →</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+        <div style="width:32px; height:32px; background:#e8e8e8; border-radius:8px; display:flex; align-items:center; justify-content:center;">◈</div>
+        <span style="font-size:14px; font-weight:700;">[Product Name]</span>
+      </div>
+      <div class="wf-box" style="height:40px; font-size:12px;">[ Tagline ]</div>
+    </div>
+    <div>
+      <p class="footer-heading">Product</p>
+      <a class="footer-link" href="features.html">Solutions</a>
+      <a class="footer-link" href="pricing.html">Pricing</a>
+      <a class="footer-link" href="how-it-works.html">How It Works</a>
+    </div>
+    <div>
+      <p class="footer-heading">Company</p>
+      <a class="footer-link" href="about.html">About</a>
+      <a class="footer-link" href="blog.html">Blog</a>
+      <a class="footer-link" href="demo.html">Contact</a>
+    </div>
+    <div>
+      <p class="footer-heading">Legal</p>
+      <a class="footer-link" href="#">Privacy Policy</a>
+      <a class="footer-link" href="#">Terms of Service</a>
+    </div>
+  </div>
+  <div style="border-top:1px solid #eee; padding-top:20px;">
+    <p style="font-size:12px; color:#aaa;">© 2026 [Product Name]. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
