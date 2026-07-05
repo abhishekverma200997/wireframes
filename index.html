@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nowledgeworks — Run a Smarter Business</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ── TOKENS ── */
+  :root {
+    --orange:     #FD644B;
+    --pink:       #D63AC9;
+    --teal:       #289E8E;
+    --bg:         #FFFFFF;
+    --surface:    #FAFAFA;
+    --surface-2:  #F4F4F6;
+    --text:       #0A0A0F;
+    --text-muted: #717180;
+    --border:     #E4E4E8;
+    --gradient:   linear-gradient(135deg, #D63AC9 0%, #FD644B 100%);
+    --radius:     12px;
+    --radius-sm:  8px;
+    --shadow-sm:  0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md:  0 4px 16px rgba(0,0,0,0.10);
+  }
+
+  /* ── RESET ── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 80px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-logo-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .nav-wordmark {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-actions { display: flex; gap: 10px; align-items: center; }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    background: var(--gradient);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-secondary:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-1px); }
+  .btn-lg { padding: 13px 28px; font-size: 15px; border-radius: var(--radius-sm); }
+
+  /* ── SECTION BASE ── */
+  .section { padding: 80px 80px; }
+  .section-surface { background: var(--surface); }
+  .section-surface-2 { background: var(--surface-2); }
+
+  /* ── CHIP / BADGE ── */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFF0EE;
+    border: 1px solid #FDD0C8;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 14px;
+    color: var(--orange);
+    margin-bottom: 24px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center;
+    padding: 88px 80px 64px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    color: var(--text);
+  }
+  .hero h1 span {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  .hero-image {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    background: var(--surface-2);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted);
+  }
+  .hero-image-placeholder .icon { font-size: 48px; }
+  .hero-image-placeholder p { font-size: 14px; }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    padding: 40px 80px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .stats-intro {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .stats-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .stat-item { text-align: center; }
+  .stat-number {
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 8px 0 4px;
+  }
+  .stat-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    max-width: 160px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .stat-divider {
+    width: 1px;
+    height: 60px;
+    background: var(--border);
+  }
+
+  /* ── PROBLEM STATEMENT ── */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 14px;
+  }
+  .section-heading {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  .section-subtext {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .pain-points { display: flex; flex-direction: column; gap: 12px; }
+  .pain-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+  }
+  .pain-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #FFF0EE;
+    border: 1px solid #FDD0C8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 13px;
+    color: var(--orange);
+    font-weight: 700;
+  }
+  .pain-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .problem-image {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  /* ── PERSONAS ── */
+  .personas-header { text-align: center; margin-bottom: 36px; }
+  .personas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .persona-card {
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    background: var(--bg);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  .persona-card:hover {
+    border-color: var(--orange);
+    box-shadow: 0 4px 20px rgba(253,100,75,0.12);
+    transform: translateY(-2px);
+  }
+  .persona-card.featured {
+    border-color: var(--orange);
+    box-shadow: 0 4px 20px rgba(253,100,75,0.12);
+  }
+  .persona-emoji {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin: 0 auto 16px;
+  }
+  .persona-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .persona-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  .video-placeholder {
+    background: var(--surface-2);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-sm);
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: 11px;
+  }
+  .video-placeholder .play-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ── CONSULTANT COMPARISON ── */
+  .comparison-section {
+    background: var(--text);
+    padding: 56px 80px;
+    text-align: center;
+  }
+  .comparison-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .comparison-section p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+  }
+  .comparison-section strong {
+    color: #fff;
+    font-weight: 700;
+  }
+  .comparison-highlight {
+    font-size: 22px;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .hiw-header { text-align: center; margin-bottom: 48px; }
+  .hiw-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    position: relative;
+  }
+  .hiw-connector {
+    position: absolute;
+    top: 28px;
+    left: calc(16.66% + 28px);
+    right: calc(16.66% + 28px);
+    height: 1px;
+    background: linear-gradient(90deg, var(--orange), var(--pink));
+    opacity: 0.3;
+  }
+  .hiw-step {
+    text-align: center;
+    padding: 28px 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    position: relative;
+    z-index: 1;
+  }
+  .step-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+  .hiw-step h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .hiw-step p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .hiw-link {
+    text-align: center;
+    margin-top: 28px;
+  }
+  .hiw-link a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--orange);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s;
+  }
+  .hiw-link a:hover { gap: 8px; }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    padding: 80px 80px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .cta-banner h2 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .cta-banner .sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .cta-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 480px;
+    margin: 0 auto 28px;
+  }
+  .cta-body {
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+  }
+  .email-row {
+    display: flex;
+    gap: 8px;
+    max-width: 400px;
+    margin: 0 auto 10px;
+  }
+  .email-input {
+    flex: 1;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    height: 42px;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .email-input:focus { border-color: var(--orange); }
+  .email-disclaimer {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 56px 80px 28px;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-brand .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 260px;
+    margin-bottom: 18px;
+  }
+  .social-icons { display: flex; gap: 10px; }
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    transition: border-color 0.2s, color 0.2s;
+    font-weight: 600;
+  }
+  .social-icon:hover { border-color: var(--orange); color: var(--orange); }
+  .footer-heading {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .footer-link {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: var(--orange); }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    nav, .hero, .section, .stats-bar, .comparison-section, .cta-banner, footer { padding-left: 40px; padding-right: 40px; }
+    .hero h1 { font-size: 40px; }
+    .problem-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 56px 20px 40px; }
+    .hero h1 { font-size: 32px; }
+    .section { padding: 48px 20px; }
+    .stats-bar { padding: 32px 20px; }
+    .stats-grid { flex-direction: column; gap: 24px; }
+    .stat-divider { display: none; }
+    .personas-grid { grid-template-columns: 1fr; }
+    .hiw-steps { grid-template-columns: 1fr; }
+    .hiw-connector { display: none; }
+    .comparison-section, .cta-banner, footer { padding-left: 20px; padding-right: 20px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .cta-actions, .hero-actions { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">N</div>
+    <span class="nav-wordmark">Nowledgeworks</span>
+  </div>
+  <div class="nav-links">
+    <a href="solutions.html">Solutions</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="education.html">Education</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-secondary" onclick="window.location.href='demo.html'">Demo</button>
+    <button class="btn-primary" onclick="window.location.href='free-trial.html'">Try it for Free</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="chip">🚀 Now in beta — join for free</div>
+  <h1>Run a Smarter Business.<br><span>Focus on What You Love.</span></h1>
+  <p>Simple AI tools that handle the heavy lifting of marketing and operations, giving you the time and resources to scale your business.</p>
+  <div class="hero-actions">
+    <button class="btn-primary btn-lg" onclick="window.location.href='demo.html'">Demo →</button>
+    <button class="btn-secondary btn-lg" onclick="window.location.href='free-trial.html'">Try it for Free</button>
+  </div>
+  <div class="hero-image">
+    <div class="hero-image-placeholder">
+      <div class="icon">📸</div>
+      <p>[ Stock photo — coffee shop, restaurant, retail, small business owner ]</p>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <p class="stats-intro">A 5% increase in customer retention can lead to at least a 25% increase in profits — and as high as 95%</p>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">5%</div>
+      <div class="stat-label">Retention Increase</div>
+      <div class="stat-desc">Is all it takes to unlock major profit growth</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">25%</div>
+      <div class="stat-label">Profit Boost</div>
+      <div class="stat-desc">From a small bump in customer loyalty</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">95%</div>
+      <div class="stat-label">Maximum Upside</div>
+      <div class="stat-desc">The ceiling on what retention can do for your bottom line</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM STATEMENT -->
+<div class="section">
+  <div class="problem-grid">
+    <div>
+      <div class="section-eyebrow">Sound familiar?</div>
+      <div class="section-subtext">You know you should be doing more with your existing customers. You've heard the stats. You believe the logic. But knowing and doing are very different things — and the gap between them is filled with real, legitimate obstacles that no one seems to acknowledge.</div>
+      <div class="pain-points">
+        <div class="pain-item">
+          <div class="pain-icon">✕</div>
+          <div class="pain-text">I don't know how to use the data.</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">✕</div>
+          <div class="pain-text">I don't have the time or staff to do all this.</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">✕</div>
+          <div class="pain-text">I don't want to lose control of my business decisions and communications.</div>
+        </div>
+      </div>
+    </div>
+    <div class="problem-image">
+      [ Stock photo — business owner looking stressed / overwhelmed ]
+    </div>
+  </div>
+</div>
+
+<!-- PERSONAS -->
+<div class="section section-surface">
+  <div class="personas-header">
+    <div class="section-eyebrow">Who we help</div>
+    <h2 class="section-heading">Add Business Skills to Your Team, Instantly.</h2>
+    <p class="section-subtext" style="max-width:580px; margin: 0 auto;">Easily plan your marketing, organize your operations, and check-off tasks with an easy-to-use digital partner built for small businesses.</p>
+  </div>
+  <div class="personas-grid">
+
+    <div class="persona-card">
+      <div class="persona-emoji">☕</div>
+      <div class="persona-title">Just Getting Started</div>
+      <div class="persona-desc">You've opened your doors, you're seeing regulars form, but you have no marketing plan and no time to build one.</div>
+      <div class="video-placeholder">
+        <div class="play-icon">▶</div>
+        <span>Video coming soon — Joanna's story</span>
+      </div>
+    </div>
+
+    <div class="persona-card featured">
+      <div class="persona-emoji">📦</div>
+      <div class="persona-title">Ready to Grow Smarter</div>
+      <div class="persona-desc">You've been running for a few years and have customer data — but turning it into targeted, personalized action feels out of reach.</div>
+      <div class="video-placeholder">
+        <div class="play-icon">▶</div>
+        <span>Video coming soon — Robert's story</span>
+      </div>
+    </div>
+
+    <div class="persona-card">
+      <div class="persona-emoji">🎯</div>
+      <div class="persona-title">I Know What I Want to Do</div>
+      <div class="persona-desc">You have a specific campaign, re-order strategy, or communication goal in mind — you just need the tools and copy to execute it.</div>
+      <div class="video-placeholder">
+        <div class="play-icon">▶</div>
+        <span>Video coming soon — Skyla / Paulo's story</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONSULTANT COMPARISON -->
+<div class="comparison-section">
+  <div class="comparison-inner">
+    <span class="comparison-highlight">$100–$250/hour for a consultant. Or Nowledgeworks for a fraction of that — 24/7.</span>
+    <p>A real marketing consultant or data analyst charges <strong>$100–$250 per hour</strong>. Nowledgeworks gives you all of the above, available 24/7, every day of the year, for a fraction of that monthly cost.</p>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+  <div class="hiw-header">
+    <div class="section-eyebrow">How it works</div>
+    <h2 class="section-heading">Simple Tools, Total Control</h2>
+  </div>
+  <div class="hiw-steps">
+    <div class="hiw-connector"></div>
+    <div class="hiw-step">
+      <div class="step-num">1</div>
+      <h3>Connect Your Data Sources</h3>
+      <p>Looply pulls data directly from your POS, your financials, and your other business systems — no manual exports, no spreadsheet wrangling required.</p>
+    </div>
+    <div class="hiw-step">
+      <div class="step-num">2</div>
+      <h3>Analyze Your Sales</h3>
+      <p>It identifies your best customers, recent visitors, lapsed regulars, and first-timers — segmenting your audience automatically so you know exactly who to reach.</p>
+    </div>
+    <div class="hiw-step">
+      <div class="step-num">3</div>
+      <h3>Track Real Results</h3>
+      <p>Not opens. Not likes. Actual revenue. Looply tracks how many recipients came in and made a purchase — because you can't pay bills with engagement metrics.</p>
+    </div>
+  </div>
+  <div class="hiw-link">
+    <a href="how-it-works.html">See the full process →</a>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Get the Extra Help You Deserve</h2>
+  <p class="sub">Free to try, simple to use, and built to give you your evenings back</p>
+  <div class="cta-actions">
+    <button class="btn-primary btn-lg" onclick="window.location.href='demo.html'">Demo →</button>
+    <button class="btn-secondary btn-lg" onclick="window.location.href='free-trial.html'">Try it for Free</button>
+  </div>
+  <hr class="cta-divider">
+  <p class="cta-body">Stop leaving retention revenue on the table. Stop staring at data that doesn't tell you anything. Stop spending hours on tasks that Nowledgeworks can handle in minutes.</p>
+  <div class="email-row">
+    <input class="email-input" type="email" placeholder="Your email address" />
+    <button class="btn-secondary">Subscribe</button>
+  </div>
+  <p class="email-disclaimer">No spam. Just product updates. Unsubscribe anytime.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="nav-logo-mark">N</div>
+        <span style="font-size:15px; font-weight:700;">Nowledgeworks</span>
+      </div>
+      <p class="footer-tagline">[ Tagline — to be confirmed ]</p>
+      <div class="social-icons">
+        <div class="social-icon">tw</div>
+        <div class="social-icon">in</div>
+        <div class="social-icon">ig</div>
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Product</p>
+      <a class="footer-link" href="solutions.html">Solutions</a>
+      <a class="footer-link" href="how-it-works.html">How It Works</a>
+      <a class="footer-link" href="free-trial.html">Free Trial</a>
+      <a class="footer-link" href="demo.html">Demo</a>
+    </div>
+    <div>
+      <p class="footer-heading">Company</p>
+      <a class="footer-link" href="about.html">About</a>
+      <a class="footer-link" href="education.html">Education</a>
+      <a class="footer-link" href="faq.html">FAQ</a>
+    </div>
+    <div>
+      <p class="footer-heading">Account</p>
+      <a class="footer-link" href="#">Log in</a>
+      <a class="footer-link" href="#">Privacy Policy</a>
+      <a class="footer-link" href="#">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Nowledgeworks. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
