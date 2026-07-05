@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — Nowledgeworks</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FD644B;
+    --pink: #D63AC9;
+    --teal: #289E8E;
+    --bg: #FFFFFF;
+    --surface: #FAFAFA;
+    --surface-2: #F4F4F6;
+    --text: #0A0A0F;
+    --text-muted: #717180;
+    --border: #E4E4E8;
+    --gradient: linear-gradient(135deg, #D63AC9 0%, #FD644B 100%);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { text-decoration: none; color: inherit; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 80px; height: 64px; display: flex; align-items: center; justify-content: space-between; z-index: 100; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-logo-mark { width: 36px; height: 36px; border-radius: 10px; background: var(--gradient); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; font-weight: 800; }
+  .nav-wordmark { font-size: 15px; font-weight: 700; color: var(--text); }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a.active { color: var(--text); font-weight: 600; }
+  .nav-actions { display: flex; gap: 10px; }
+  .btn-primary { background: var(--gradient); color: #fff; border: none; border-radius: var(--radius-sm); padding: 10px 22px; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; transition: opacity 0.2s, transform 0.1s; }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: var(--text); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 10px 22px; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+  .btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
+  .btn-lg { padding: 13px 28px; font-size: 15px; }
+
+  /* SHARED */
+  .section { padding: 80px 80px; }
+  .section-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+  .section-heading { font-size: 36px; font-weight: 800; letter-spacing: -1px; line-height: 1.15; margin-bottom: 12px; color: var(--text); }
+  .section-heading span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .section-sub { font-size: 17px; color: var(--text-muted); line-height: 1.7; }
+
+  /* HERO */
+  .page-hero { text-align: center; padding: 80px 80px 56px; background: var(--surface); border-bottom: 1px solid var(--border); }
+  .page-hero h1 { font-size: 44px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.1; max-width: 600px; margin: 0 auto 14px; }
+  .page-hero p { font-size: 17px; color: var(--text-muted); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+
+  /* REASSURANCE BAR */
+  .reassurance { background: var(--bg); border-bottom: 1px solid var(--border); padding: 56px 80px; }
+  .reassurance-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+  .reassurance-item { text-align: center; padding: 24px 16px; }
+  .reassurance-icon { width: 56px; height: 56px; border-radius: 14px; background: #FFF0EE; display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 16px; }
+  .reassurance-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .reassurance-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  /* LEARNS YOUR BUSINESS */
+  .learns-section { background: var(--surface); border-bottom: 1px solid var(--border); padding: 64px 80px; text-align: center; }
+  .learns-inner { max-width: 680px; margin: 0 auto; }
+  .learns-inner h2 { font-size: 24px; font-weight: 800; color: var(--text); margin-bottom: 16px; letter-spacing: -0.5px; }
+  .learns-inner p { font-size: 16px; color: var(--text-muted); line-height: 1.8; }
+
+  /* STEPS */
+  .step-row { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding: 56px 0; border-bottom: 1px solid var(--border); }
+  .step-row:last-child { border-bottom: none; }
+  .step-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+  .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--gradient); color: #fff; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-title { font-size: 20px; font-weight: 700; color: var(--text); }
+  .step-desc { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+  .step-tags { display: flex; align-items: center; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  .step-tag { background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 12px; font-weight: 500; color: var(--text-muted); }
+  .step-tag-label { font-size: 12px; color: var(--text-muted); }
+  .screenshot-placeholder { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--text-muted); font-size: 13px; }
+  .screenshot-placeholder .icon { font-size: 32px; opacity: 0.4; }
+
+  /* FAQ */
+  .faq-section { padding: 64px 80px; }
+  .faq-section h2 { font-size: 24px; font-weight: 800; text-align: center; margin-bottom: 32px; color: var(--text); }
+  .faq-list { max-width: 720px; margin: 0 auto; }
+  .faq-item { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; cursor: pointer; transition: border-color 0.2s; }
+  .faq-item:hover { border-color: var(--orange); }
+  .faq-item span { font-size: 15px; font-weight: 500; color: var(--text); }
+  .faq-chevron { font-size: 18px; color: var(--text-muted); }
+  .faq-link { text-align: center; margin-top: 20px; }
+  .faq-link a { font-size: 14px; font-weight: 600; color: var(--orange); }
+  .faq-link a:hover { text-decoration: underline; }
+
+  /* CTA */
+  .cta-section { background: var(--surface); border-top: 1px solid var(--border); padding: 80px 80px; text-align: center; }
+  .cta-section h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 10px; }
+  .cta-section .sub { font-size: 16px; color: var(--text-muted); margin-bottom: 28px; }
+  .cta-actions { display: flex; justify-content: center; gap: 12px; }
+
+  /* FOOTER */
+  footer { padding: 56px 80px 28px; border-top: 1px solid var(--border); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-brand .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .footer-heading { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text); margin-bottom: 16px; }
+  .footer-link { font-size: 13px; color: var(--text-muted); display: block; margin-bottom: 10px; transition: color 0.2s; }
+  .footer-link:hover { color: var(--orange); }
+  .footer-bottom { border-top: 1px solid var(--border); padding-top: 20px; font-size: 12px; color: var(--text-muted); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    nav, .page-hero, .section, .reassurance, .learns-section, .faq-section, .cta-section, footer { padding-left: 40px; padding-right: 40px; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .page-hero, .section, .reassurance, .learns-section, .faq-section, .cta-section, footer { padding-left: 20px; padding-right: 20px; }
+    .page-hero h1 { font-size: 32px; }
+    .reassurance-grid { grid-template-columns: 1fr; }
+    .step-row { grid-template-columns: 1fr; gap: 24px; }
+    .cta-actions { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+      <div class="nav-logo-mark">N</div>
+      <span class="nav-wordmark">Nowledgeworks</span>
+    </a>
+  </div>
+  <div class="nav-links">
+    <a href="solutions.html">Solutions</a>
+    <a href="how-it-works.html" class="active">How It Works</a>
+    <a href="education.html">Education</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-secondary" onclick="window.location.href='demo.html'">Demo</button>
+    <button class="btn-primary" onclick="window.location.href='free-trial.html'">Try it for Free</button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="section-eyebrow">How it works</div>
+  <h1>Simple Tools, <span>Total Control</span></h1>
+  <p>No consultants. No complicated software. Just results.</p>
+</div>
+
+<!-- REASSURANCE BAR -->
+<div class="reassurance">
+  <div class="reassurance-grid">
+    <div class="reassurance-item">
+      <div class="reassurance-icon">⏱</div>
+      <div class="reassurance-title">Fast, Not Frustrating</div>
+      <div class="reassurance-desc">Go from idea to live campaign in minutes. No agency briefings, no approval chains, no waiting a week for a first draft.</div>
+    </div>
+    <div class="reassurance-item">
+      <div class="reassurance-icon">🔒</div>
+      <div class="reassurance-title">Personalized, Not Generic</div>
+      <div class="reassurance-desc">Every campaign is tailored to the specific customers you're targeting — not a one-size-fits-all blast that everyone ignores.</div>
+    </div>
+    <div class="reassurance-item">
+      <div class="reassurance-icon">🙋</div>
+      <div class="reassurance-title">Affordable, Not Aspirational</div>
+      <div class="reassurance-desc">Designed for small business budgets — not enterprise marketing departments. No paid advertising spend required.</div>
+    </div>
+  </div>
+</div>
+
+<!-- LEARNS YOUR BUSINESS -->
+<div class="learns-section">
+  <div class="learns-inner">
+    <h2>A tool that never forgets your business</h2>
+    <p>And unlike a consultant who moves on to the next client, Nowledgeworks learns your business — your goals, your brand voice, your past campaigns, your best customers — and never forgets. It never takes another job. It never calls out sick ten minutes before a shift.</p>
+  </div>
+</div>
+
+<!-- STEPS -->
+<div class="section">
+
+  <!-- STEP 1 -->
+  <div class="step-row">
+    <div>
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div class="step-title">Connect Your Data Sources</div>
+      </div>
+      <div class="step-desc">Nowledgeworks pulls data directly from your POS, your financials, and your other business systems — no manual exports, no spreadsheet wrangling required.</div>
+      <div class="step-tags">
+        <span class="step-tag-label">Works with:</span>
+        <span class="step-tag">POS</span>
+        <span class="step-tag">QuickBooks</span>
+        <span class="step-tag">+ more</span>
+      </div>
+    </div>
+    <div class="screenshot-placeholder">
+      <div class="icon">🖥️</div>
+      Screenshot — POS connection screen
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step-row">
+    <div class="screenshot-placeholder">
+      <div class="icon">📊</div>
+      Screenshot — AI dashboard loading
+    </div>
+    <div>
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div class="step-title">Analyze Your Sales</div>
+      </div>
+      <div class="step-desc">It identifies your best customers, recent visitors, lapsed regulars, and first-timers — segmenting your audience automatically so you know exactly who to reach.</div>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step-row">
+    <div>
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div class="step-title">Suggest or Build a Campaign</div>
+      </div>
+      <div class="step-desc">Ask it anything: "Show me customers who visited 5+ times but haven't been in 60 days." Nowledgeworks will suggest a campaign — or help you design and execute one from scratch.</div>
+    </div>
+    <div class="screenshot-placeholder">
+      <div class="icon">💡</div>
+      Screenshot — recommendations screen
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step-row">
+    <div class="screenshot-placeholder">
+      <div class="icon">✉️</div>
+      Screenshot — campaign send screen
+    </div>
+    <div>
+      <div class="step-header">
+        <div class="step-num">4</div>
+        <div class="step-title">Draft Your Message</div>
+      </div>
+      <div class="step-desc">Nowledgeworks writes the email or text in your brand voice — and makes sure you're not over-messaging the same customers. No spam, no generic blasts.</div>
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step-row">
+    <div>
+      <div class="step-header">
+        <div class="step-num">5</div>
+        <div class="step-title">Track Real Results</div>
+      </div>
+      <div class="step-desc">Not opens. Not likes. Actual revenue. Nowledgeworks tracks how many recipients came in and made a purchase — because you can't pay bills with engagement metrics.</div>
+    </div>
+    <div class="screenshot-placeholder">
+      <div class="icon">📈</div>
+      Screenshot — results dashboard
+    </div>
+  </div>
+
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>Quick Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <span>Do I need any tech experience to use this?</span>
+      <span class="faq-chevron">›</span>
+    </div>
+    <div class="faq-item">
+      <span>What POS systems do you work with?</span>
+      <span class="faq-chevron">›</span>
+    </div>
+    <div class="faq-item">
+      <span>How long before I see results?</span>
+      <span class="faq-chevron">›</span>
+    </div>
+  </div>
+  <div class="faq-link">
+    <a href="education.html">See all FAQs in Education →</a>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Get the Extra Help You Deserve</h2>
+  <p class="sub">Free to try, simple to use, and built to give you your evenings back</p>
+  <div class="cta-actions">
+    <button class="btn-primary btn-lg" onclick="window.location.href='demo.html'">Demo →</button>
+    <button class="btn-secondary btn-lg" onclick="window.location.href='free-trial.html'">Try it for Free</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="nav-logo-mark">N</div>
+        <span style="font-size:15px; font-weight:700;">Nowledgeworks</span>
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Product</p>
+      <a class="footer-link" href="solutions.html">Solutions</a>
+      <a class="footer-link" href="how-it-works.html">How It Works</a>
+      <a class="footer-link" href="free-trial.html">Free Trial</a>
+      <a class="footer-link" href="demo.html">Demo</a>
+    </div>
+    <div>
+      <p class="footer-heading">Company</p>
+      <a class="footer-link" href="about.html">About</a>
+      <a class="footer-link" href="education.html">Education</a>
+    </div>
+    <div>
+      <p class="footer-heading">Account</p>
+      <a class="footer-link" href="#">Log in</a>
+      <a class="footer-link" href="#">Privacy Policy</a>
+      <a class="footer-link" href="#">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Nowledgeworks. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

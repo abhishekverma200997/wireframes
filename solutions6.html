@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solutions — Nowledgeworks</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --orange: #FD644B; --pink: #D63AC9; --teal: #289E8E; --bg: #FFFFFF; --surface: #FAFAFA; --surface-2: #F4F4F6; --text: #0A0A0F; --text-muted: #717180; --border: #E4E4E8; --gradient: linear-gradient(135deg, #D63AC9 0%, #FD644B 100%); --radius: 12px; --radius-sm: 8px; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { text-decoration: none; color: inherit; }
+  nav { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 80px; height: 64px; display: flex; align-items: center; justify-content: space-between; z-index: 100; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-logo-mark { width: 36px; height: 36px; border-radius: 10px; background: var(--gradient); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; font-weight: 800; }
+  .nav-wordmark { font-size: 15px; font-weight: 700; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); font-weight: 600; }
+  .nav-actions { display: flex; gap: 10px; }
+  .btn-primary { background: var(--gradient); color: #fff; border: none; border-radius: var(--radius-sm); padding: 10px 22px; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; transition: opacity 0.2s; }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-secondary { background: transparent; color: var(--text); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 10px 22px; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+  .btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
+  .btn-lg { padding: 13px 28px; font-size: 15px; }
+  .section { padding: 80px 80px; }
+  .section-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+  .page-hero { text-align: center; padding: 80px 80px 56px; background: var(--surface); border-bottom: 1px solid var(--border); }
+  .page-hero h1 { font-size: 44px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.1; max-width: 640px; margin: 0 auto 14px; }
+  .page-hero p { font-size: 17px; color: var(--text-muted); max-width: 540px; margin: 0 auto; line-height: 1.7; }
+
+  /* STATS */
+  .stats-bar { padding: 48px 80px; background: var(--bg); border-bottom: 1px solid var(--border); }
+  .stats-intro { text-align: center; font-size: 13px; color: var(--text-muted); margin-bottom: 28px; font-style: italic; }
+  .stats-grid { display: flex; align-items: center; justify-content: space-around; max-width: 700px; margin: 0 auto; }
+  .stat-number { font-size: 52px; font-weight: 800; letter-spacing: -2px; line-height: 1; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .stat-label { font-size: 13px; font-weight: 600; color: var(--text); margin: 8px 0 4px; }
+  .stat-desc { font-size: 12px; color: var(--text-muted); max-width: 160px; margin: 0 auto; line-height: 1.5; }
+  .stat-divider { width: 1px; height: 60px; background: var(--border); }
+
+  /* PERSONAS */
+  .personas-header { text-align: center; margin-bottom: 32px; }
+  .personas-header h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .personas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .persona-card { border: 1.5px solid var(--border); border-radius: var(--radius); padding: 24px; text-align: center; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
+  .persona-card:hover, .persona-card.active { border-color: var(--orange); box-shadow: 0 4px 20px rgba(253,100,75,0.12); }
+  .persona-emoji { width: 56px; height: 56px; border-radius: 50%; background: var(--surface-2); display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 14px; }
+  .persona-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .persona-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+  .persona-link { font-size: 12px; font-weight: 600; color: var(--orange); }
+
+  /* CAPABILITY INTRO */
+  .capability-section { background: var(--surface); border-bottom: 1px solid var(--border); padding: 64px 80px; text-align: center; }
+  .capability-inner { max-width: 720px; margin: 0 auto; font-size: 17px; color: var(--text-muted); line-height: 1.8; }
+  .capability-inner strong { color: var(--text); }
+
+  /* SOLUTIONS */
+  .solution-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; padding: 64px 0; border-bottom: 1px solid var(--border); }
+  .solution-row:last-child { border-bottom: none; }
+  .feature-icon { width: 56px; height: 56px; border-radius: 14px; background: #FFF0EE; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 16px; }
+  .pain-box { background: #FFF0EE; border-left: 4px solid var(--orange); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin-bottom: 20px; }
+  .pain-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+  .pain-text { font-size: 14px; color: var(--text); line-height: 1.6; }
+  .solution-title { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+  .solution-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px; }
+  .benefit-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .benefit-check { color: var(--teal); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .benefit-text { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+  .solution-link { margin-top: 18px; }
+  .solution-link a { font-size: 14px; font-weight: 600; color: var(--orange); }
+  .solution-link a:hover { text-decoration: underline; }
+  .solution-image { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--text-muted); font-size: 13px; font-style: italic; }
+
+  /* CTA */
+  .cta-section { background: var(--surface); border-top: 1px solid var(--border); padding: 80px 80px; text-align: center; }
+  .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--text); }
+  .cta-actions { display: flex; justify-content: center; gap: 12px; }
+
+  footer { padding: 56px 80px 28px; border-top: 1px solid var(--border); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-heading { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 16px; }
+  .footer-link { font-size: 13px; color: var(--text-muted); display: block; margin-bottom: 10px; transition: color 0.2s; }
+  .footer-link:hover { color: var(--orange); }
+  .footer-bottom { border-top: 1px solid var(--border); padding-top: 20px; font-size: 12px; color: var(--text-muted); }
+
+  @media (max-width: 1024px) { nav, .page-hero, .section, .stats-bar, .capability-section, .cta-section, footer { padding-left: 40px; padding-right: 40px; } }
+  @media (max-width: 768px) { nav { padding: 0 20px; } .nav-links { display: none; } .page-hero, .section, .stats-bar, .capability-section, .cta-section, footer { padding-left: 20px; padding-right: 20px; } .personas-grid { grid-template-columns: 1fr 1fr; } .solution-row { grid-template-columns: 1fr; gap: 32px; } .page-hero h1 { font-size: 32px; } .cta-actions { flex-direction: column; align-items: center; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><a href="index.html" style="display:flex; align-items:center; gap:10px;"><div class="nav-logo-mark">N</div><span class="nav-wordmark">Nowledgeworks</span></a></div>
+  <div class="nav-links"><a href="solutions.html" class="active">Solutions</a><a href="how-it-works.html">How It Works</a><a href="education.html">Education</a><a href="about.html">About</a></div>
+  <div class="nav-actions"><button class="btn-secondary" onclick="window.location.href='demo.html'">Demo</button><button class="btn-primary" onclick="window.location.href='free-trial.html'">Try it for Free</button></div>
+</nav>
+
+<div class="page-hero">
+  <div class="section-eyebrow">Solutions</div>
+  <h1>Add Business Skills to Your Team, Instantly.</h1>
+  <p>Easily plan your marketing, organize your operations, and check-off tasks with an easy-to-use digital partner built for small businesses.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <p class="stats-intro">A 5% increase in customer retention can lead to at least a 25% increase in profits — and in many cases, as high as 95%</p>
+  <div class="stats-grid">
+    <div style="text-align:center;"><div class="stat-number">5%</div><div class="stat-label">Retention Increase</div><div class="stat-desc">Is all it takes to unlock major profit growth</div></div>
+    <div class="stat-divider"></div>
+    <div style="text-align:center;"><div class="stat-number">25%</div><div class="stat-label">Minimum Profit Boost</div><div class="stat-desc">From a small bump in customer loyalty</div></div>
+    <div class="stat-divider"></div>
+    <div style="text-align:center;"><div class="stat-number">95%</div><div class="stat-label">Maximum Upside</div><div class="stat-desc">The ceiling on what retention can do for your bottom line</div></div>
+  </div>
+</div>
+
+<!-- PERSONAS -->
+<div class="section">
+  <div class="personas-header"><h2>Which of these sounds like you?</h2></div>
+  <div class="personas-grid">
+    <div class="persona-card active">
+      <div class="persona-emoji">☕</div>
+      <div class="persona-name">Joanna</div>
+      <div class="persona-desc">You've just opened your doors. You're starting to see regulars, but you have no marketing plan and no time to build one.</div>
+      <span class="persona-link">See my solutions →</span>
+    </div>
+    <div class="persona-card">
+      <div class="persona-emoji">🐾</div>
+      <div class="persona-name">Robert</div>
+      <div class="persona-desc">You've been running for years and have customer data — but turning it into personalized, targeted action feels out of reach.</div>
+      <span class="persona-link">See my solutions →</span>
+    </div>
+    <div class="persona-card">
+      <div class="persona-emoji">✏️</div>
+      <div class="persona-name">Juanita</div>
+      <div class="persona-desc">You know what you want to say to your customers. You just run out of time before the copy ever sounds quite right.</div>
+      <span class="persona-link">See my solutions →</span>
+    </div>
+    <div class="persona-card">
+      <div class="persona-emoji">🎯</div>
+      <div class="persona-name">Skyla / Paulo</div>
+      <div class="persona-desc">You have a specific goal in mind — re-orders, subscriptions, multilingual outreach — and need the tools to execute it.</div>
+      <span class="persona-link">See my solutions →</span>
+    </div>
+  </div>
+</div>
+
+<!-- CAPABILITY INTRO -->
+<div class="capability-section">
+  <div class="capability-inner">
+    Imagine having all of this at your fingertips: <strong>A seasoned marketing advisor</strong> who knows your business inside and out / <strong>A data analyst</strong> ready to slice and dice your customer data on demand / <strong>A copywriter</strong> who drafts emails in your voice, not corporate speak / <strong>A campaign manager</strong> who tracks results and tells you what actually worked
+  </div>
+</div>
+
+<!-- SOLUTIONS -->
+<div class="section">
+
+  <!-- SOLUTION 1 -->
+  <div class="solution-row">
+    <div>
+      <div class="feature-icon">🧠</div>
+      <div class="pain-box"><div class="pain-label">The problem</div><div class="pain-text">I don't know how to use the data. Your sales data lives in your POS system, maybe a spreadsheet, maybe three different places. Getting it into a usable form feels like a project in itself — one you never have time to start.</div></div>
+      <div class="solution-title">AI-Powered Insights</div>
+      <div class="solution-desc">Your business generates data from multiple sources — your POS, your financials, your inventory. Nowledgeworks brings it all together so you can finally see what's working, what's not, and where the opportunity is.</div>
+      <div class="benefit-item"><span class="benefit-check">✓</span><span class="benefit-text">Identifies your best customers, recent visitors, lapsed regulars, and first-timers</span></div>
+      <div class="benefit-item"><span class="benefit-check">✓</span><span class="benefit-text">Segmenting your audience automatically so you know exactly who to reach</span></div>
+      <div class="benefit-item"><span class="benefit-check">✓</span><span class="benefit-text">Ask it anything: "Show me customers who visited 5+ times but haven't been in 60 days"</span></div>
+      <div class="solution-link"><a href="how-it-works.html">See how it works →</a></div>
+    </div>
+    <div class="solution-image">Stock photo — relates to data insights</div>
+  </div>
+
+  <!-- SOLUTION 2 -->
+  <div class="solution-row">
+    <div class="solution-image">Stock photo — customer walking back into a business</div>
+    <div>
+      <div class="feature-icon">🤝</div>
+      <div class="pain-box"><div class="pain-label">The problem</div><div class="pain-text">My best customers used to come in every week. Now I don't know where they went — or how to bring them back.</div></div>
+      <div class="solution-title">Customer Retention</div>
+      <div class="solution-desc">The journey from a first visit to a lifelong customer doesn't happen by accident. It happens through consistent, personalized communication — the kind that makes customers feel seen, valued, and remembered.</div>
+      <div class="benefit-item"><span class="benefit-check">✓</span><span class="benefit-text">Turn a curious browser into a regular before they've even had time to forget you</span></div>
+      <div class="benefit-item"><span class="benefit-check">✓</span><span class="benefit-text">An occasional visitor becomes a weekly regular — your revenue grows without spending a dollar on new customer acquisition</span></div>
+      <div class="benefit-item"><span class="benefit-check">✓</span><span class="benefit-text">Reward the customers who deserve it most, automatically</span></div>
+      <div class="solution-link"><a href="how-it-works.html">See how it works →</a></div>
+    </div>
+  </div>
+
+  <!-- SOLUTION 3 -->
+  <div class="solution-row">
+    <div>
+      <div class="feature-icon">📧</div>
+      <div class="pain-box"><div class="pain-label">The problem</div><div class="pain-text">I don't feel comfortable writing marketing emails or texts. Writing copy that sounds like you — not like a generic corporate blast — takes time, skill, and confidence. Most business owners don't feel like marketers, even when they are.</div></div>
+      <div class="solution-title">Campaign Builder</div>
+      <div class="solution-desc">No more agonizing over email copy that never sounds quite right. No more searching for a marketing vendor who understands your business and fits your budget.</div>
+      <div class="benefit-item"><span class="benefit-check">✓</span><span class="benefit-text">Makes sure you're not over-messaging the same customers. No spam, no generic blasts.</span></div>
+      <div class="benefit-item"><span class="benefit-check">✓</span><span class="benefit-text">You review every strategy, every message, every campaign — before anything goes out. The AI supports your voice. It never replaces it.</span></div>
+      <div class="solution-link"><a href="how-it-works.html">See how it works →</a></div>
+    </div>
+    <div class="solution-image">Stock photo — person on phone / sending message</div>
+  </div>
+
+  <!-- SOLUTION 4 -->
+  <div class="solution-row">
+    <div class="solution-image">Stock photo — person looking at simple report, relieved</div>
+    <div>
+      <div class="feature-icon">📊</div>
+      <div class="pain-box"><div class="pain-label">The problem</div><div class="pain-text">I have no idea which campaigns worked, which customers responded, or whether any of this is actually making me money.</div></div>
+      <div class="solution-title">Analytics & Reporting</div>
+      <div class="solution-desc">No more staring at reports you can't interpret. Nowledgeworks handles the analysis so you can spend your time where it matters most: on the floor with your customers.</div>
+      <div class="benefit-item"><span class="benefit-check">✓</span><span class="benefit-text">Not opens. Not likes. Actual revenue.</span></div>
+      <div class="benefit-item"><span class="benefit-check">✓</span><span class="benefit-text">Nowledgeworks tracks how many recipients came in and made a purchase</span></div>
+      <div class="benefit-item"><span class="benefit-check">✓</span><span class="benefit-text">If a campaign worked, Nowledgeworks repeats it on schedule — automatically. No need to rebuild your holiday emails from scratch every year when you're already at your busiest.</span></div>
+      <div class="solution-link"><a href="how-it-works.html">See how it works →</a></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Not sure which solution is right for you?</h2>
+  <div class="cta-actions">
+    <button class="btn-primary btn-lg" onclick="window.location.href='demo.html'">Demo →</button>
+    <button class="btn-secondary btn-lg" onclick="window.location.href='free-trial.html'">Try it for Free</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div><div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;"><div class="nav-logo-mark">N</div><span style="font-size:15px; font-weight:700;">Nowledgeworks</span></div></div>
+    <div><p class="footer-heading">Product</p><a class="footer-link" href="solutions.html">Solutions</a><a class="footer-link" href="how-it-works.html">How It Works</a><a class="footer-link" href="free-trial.html">Free Trial</a><a class="footer-link" href="demo.html">Demo</a></div>
+    <div><p class="footer-heading">Company</p><a class="footer-link" href="about.html">About</a><a class="footer-link" href="education.html">Education</a></div>
+    <div><p class="footer-heading">Account</p><a class="footer-link" href="#">Log in</a><a class="footer-link" href="#">Privacy Policy</a><a class="footer-link" href="#">Terms of Service</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Nowledgeworks. All rights reserved.</p></div>
+</footer>
+</body>
+</html>
