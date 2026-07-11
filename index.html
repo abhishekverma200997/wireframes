@@ -639,7 +639,51 @@
     .comparison-section, .cta-banner, footer { padding-left: 20px; padding-right: 20px; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
     .cta-actions, .hero-actions { flex-direction: column; align-items: center; }
+    .hero-stats-split {
+  flex-direction: column;
+  padding: 32px 20px;
+  gap: 2rem;
+}
   }
+  /* ── HERO + STATS SPLIT ── */
+.hero-stats-split {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 80px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-image-side {
+  flex: 1;
+  min-width: 0;
+}
+.hero-image-side img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+.stats-side {
+  flex: 1;
+  min-width: 0;
+}
+.stats-side .stats-intro {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+.stats-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.stats-stack .stat-item {
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--orange);
+  background: var(--surface);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
 </style>
 </head>
 <body>
@@ -671,32 +715,35 @@
     <button class="btn-primary btn-lg" onclick="window.location.href='demo6.html'">Demo →</button>
     <button class="btn-secondary btn-lg" onclick="window.location.href='free-trial6.html'">Try it for Free</button>
   </div>
-  <section>
-  <img src="hero.jpg" alt="Small business owner" style="width: 80%; border-radius: 12px;">
-  </section>
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <p class="stats-intro">A 5% increase in customer retention can lead to at least a 25% increase in profits — and as high as 95%</p>
-  <div class="stats-grid">
-    <div class="stat-item">
-      <div class="stat-number">5%</div>
-      <div class="stat-label">Retention Increase</div>
-      <div class="stat-desc">Is all it takes to unlock major profit growth</div>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item">
-      <div class="stat-number">25%</div>
-      <div class="stat-label">Profit Boost</div>
-      <div class="stat-desc">From a small bump in customer loyalty</div>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item">
-      <div class="stat-number">95%</div>
-      <div class="stat-label">Maximum Upside</div>
-      <div class="stat-desc">The ceiling on what retention can do for your bottom line</div>
+</div>
+
+  <!-- IMAGE + STATS SIDE BY SIDE -->
+<div class="hero-stats-split">
+  <div class="hero-image-side">
+    <img src="hero.jpg" alt="Small business owner">
+  </div>
+  <div class="stats-side">
+    <p class="stats-intro">A 5% increase in customer retention can lead to at least a 25% increase in profits — and as high as 95%</p>
+    <div class="stats-stack">
+      <div class="stat-item">
+        <div class="stat-number">5%</div>
+        <div class="stat-label">Retention Increase</div>
+        <div class="stat-desc">Is all it takes to unlock major profit growth</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">25%</div>
+        <div class="stat-label">Profit Boost</div>
+        <div class="stat-desc">From a small bump in customer loyalty</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">95%</div>
+        <div class="stat-label">Maximum Upside</div>
+        <div class="stat-desc">The ceiling on what retention can do for your bottom line</div>
+      </div>
     </div>
   </div>
 </div>
+
 
 <!-- PROBLEM STATEMENT -->
 <div class="section">
